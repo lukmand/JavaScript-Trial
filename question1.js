@@ -5,7 +5,7 @@ function changeName(answer, idx, name){
 
 	//for each index recorded in idx, change the name in answer
 	for each(var item in idx){
-		txt = answer[item].split(" ");
+		var txt = answer[item].split(" ");
 		answer[item] = name + " " + txt[1] + " " + txt[2];
 	}
 	return answer;
@@ -13,10 +13,11 @@ function changeName(answer, idx, name){
 
 function solution(record){
 	// Initialize dict, count, and position
-	count = 0;
+	var count = 0;
 	var answer = [];
-	locator = {};
-	pos = [];
+	var locator = {};
+	var pos = [];
+	var newtext = [];
 	
 	// For each item in record, split by space
 	for each(var item in record){
@@ -51,7 +52,7 @@ function solution(record){
 			
 			// Push name and has left to answer
 			answer.push(arr[2] + " has left");
-			count ++;
+			count++;
 		}
 		
 		// If the first string is change, change the name with changeName function
@@ -59,6 +60,9 @@ function solution(record){
 			pos = locator[arr[1]];
 			newtext = changeName(answer, pos, arr[2]);
 			answer = newtext;
+		}
+		else{
+			return new Error("Something is wrong");
 		}
 	}
 	

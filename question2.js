@@ -33,16 +33,16 @@ function sortProperties(obj){
 }
 
 function solution (N, users){
-	rate = {};
+	var rate = {};
 	
 	// Calculate the rate for each stage and store in dictionary
 	while (N != 0){
-		failure = countRate(N, users);
+		var failure = countRate(N, users);
 		rate[N] = failure;
 		N--;
 	}
 	
 	//Sorting algorithm based on value
-	answer = sortProperties(rate);
+	var answer = sortProperties(rate);
 	return answer;
 }
