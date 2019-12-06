@@ -24,12 +24,12 @@ function sortProperties(obj){
 	// Sort item by value
 	sortitem.sort(function(a, b){
 		if (a == b)
-			return a[1]-b[1]	//If rate is same return lowest stage
+			return a[1]-b[1];	//If rate is same return lowest stage
 		else
-			return b[1]-a[1]	// Else return higher rate
+			return b[1]-a[1];	// Else return higher rate
 		
 	});
-	return sortitem
+	return sortitem;
 }
 
 function solution (N, users){
@@ -44,5 +44,5 @@ function solution (N, users){
 	
 	//Sorting algorithm based on value
 	answer = sortProperties(rate);
-	return answer
+	return answer;
 }
